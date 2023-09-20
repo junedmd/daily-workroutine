@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.perform-container{
+    width: 300px;
+   
+    background-color:darkcyan;
+    color: antiquewhite;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid bisque;
+    position: relative;
+}
+.routine-title{
+    padding: 5px;
+    font-size: 26px;
+}
+.routine-descri{
+    padding: 5px;
+    margin: 2px;
+    font-size: 20px;
+}
+.routine-priority{
+position: absolute;
+padding: 2px;
+ right: 0;
+ top: 0;
+ background-color: blueviolet;
+ border-radius:  0 10px 0 10px;
+}

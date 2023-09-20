@@ -1,0 +1,32 @@
+
+.main-head{
+    text-align: center;
+    background-color: cadetblue;
+    color: aliceblue;
+}
+.main-container{
+    display: flex;
+    justify-content: space-around;
+   background-color: rgb(214, 133, 133);
+   height: 100vh;
+}
+.sec-head{
+    color: antiquewhite;
+}
+.priority-input{
+    padding: 15px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+.prio-btn{
+    width: 140px;
+    display: block;
+    margin:  0 auto;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: cadetblue;
+    color: aliceblue;
+    font-size: 20px;
+}
