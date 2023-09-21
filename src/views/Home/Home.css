@@ -3,9 +3,11 @@
     text-align: center;
     background-color: cadetblue;
     color: aliceblue;
+    padding: 10px;
 }
 .main-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
    background-color: rgb(214, 133, 133);
    height: 100vh;
@@ -14,9 +16,10 @@
     color: antiquewhite;
 }
 .priority-input{
-    padding: 15px;
+    padding: 13px;
     width: 250px;
     margin: 10px;
+    font-size: 20px;
     border-radius: 10px;
 
 }
@@ -29,4 +32,5 @@
     background-color: cadetblue;
     color: aliceblue;
     font-size: 20px;
+    cursor: pointer;
 }

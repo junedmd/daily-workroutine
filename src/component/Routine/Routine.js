@@ -1,5 +1,5 @@
 import "./Routine.css"
-export default function Routine({id,title,description,priority}){
+export default function Routine({id,title,description,priority,removeFromTaskList }){
     return(
         <>
         <div className="perform-container">
@@ -7,6 +7,12 @@ export default function Routine({id,title,description,priority}){
             <h5 className="routine-title"> {title}</h5>
             <p  className="routine-descri" > {description}</p>
             <h3  className="routine-priority"> 🎯{priority}</h3>
+            <span className="routine-delete"
+           onClick={()=>{
+            removeFromTaskList(id); 
+           }}
+            
+            > 🗑️ </span>
         </div>
        
         

@@ -1,14 +1,20 @@
 import "./Home.css"
 import Routine from "../../component/Routine/Routine"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 export default function Home(){
     const [Task,setTask] = useState([
         {
             id:1,
-            title: "ghar jaana hai",
-            description:" kaam hai mujhe",
+            title: "javascript ",
+            description:" jaavscript practise karni hai",
             priority:" very high"
         },
+        {
+            id:2,
+            title: "job",
+            description:" paisa kamana hai mujhe ",
+            priority:" very high"
+        }
         
       
     ]);
@@ -16,6 +22,13 @@ export default function Home(){
     const [title ,setTitle]=useState('');
     const [description, setdescription ]= useState('');
     const [priority, setpriority ]= useState('');
+
+        useEffect ( ()=>{
+            const list = JSON.parse(localStorage.getItem('Routinelist'));
+                setTask(list)
+        },[]
+
+        )
 
   
     const addtopriority =()=>{
@@ -28,12 +41,42 @@ export default function Home(){
             priority:priority
          }
 
-         setTask([...Task, obj]);
+            const newArray = [...Task, obj] ;
+
+         setTask(newArray);
          
          setTitle('');
          setdescription('');
          setpriority('');
+
+         saveToLocalStorage(newArray );
+         
+    };
+
+    const removeFromTaskList = (id)=>{
+        let index;
+        Task.forEach((task ,i)=>{
+            if(task.id===id){
+                index=i
+            }
+        }
+        )
+        
+        const tempArray = Task;
+        tempArray.splice(index,1);
+
+        setTask([...tempArray]);
+
+        saveToLocalStorage(tempArray );
+
     }
+
+    const saveToLocalStorage = (Tasks) =>{
+        localStorage.setItem('Routinelist',JSON.stringify(Tasks));
+    }
+
+   
+   
     return(
 
         <>
@@ -41,12 +84,16 @@ export default function Home(){
 
         <div className="main-container">
             <div className="firt-div" > 
-                    <h1 className="sec-head"> Routine list</h1>
+                    <h1 className="sec-head"> Routinelist</h1>
                      {
                         Task.map((Taskinfo , index) => {
-                            const {id, title,description, priority} = Taskinfo;
+                            const {id, title,description, priority  } = Taskinfo;
                             return <Routine id={id}  title={title} description={description } 
                             priority={priority}
+                            key={index}
+                            removeFromTaskList={removeFromTaskList}
+                             
+                           
                             />
 
                         })
@@ -57,7 +104,7 @@ export default function Home(){
             <div className="second-div">  
                 <h1  className="sec-head" > Add list</h1>
                 <div className="form-list">
-                    <h3> title :{title}</h3>
+                  
                      <form>
                        
                         <input  type="text" 

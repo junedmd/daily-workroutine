@@ -3,18 +3,19 @@
     padding: 0px;
 }
 .perform-container{
-    width: 300px;
+    width: 350px;
    
     background-color:darkcyan;
     color: antiquewhite;
     margin: 10px;
-    padding: 5px;
+    padding: 20px;
+    padding-bottom: 25px;
     border-radius: 10px;
     border: 1px solid bisque;
     position: relative;
 }
 .routine-title{
-    padding: 5px;
+    padding: 3px;
     font-size: 26px;
 }
 .routine-descri{
@@ -24,9 +25,18 @@
 }
 .routine-priority{
 position: absolute;
-padding: 2px;
+padding: 4px;
  right: 0;
  top: 0;
  background-color: blueviolet;
  border-radius:  0 10px 0 10px;
+}
+.routine-delete{
+    position: absolute;
+    right:7px;
+    bottom: 7px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
 }
