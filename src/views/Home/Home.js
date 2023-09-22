@@ -31,6 +31,10 @@ export default function Home(){
 
   
     const addtopriority =()=>{
+
+        if ( !title || !description || !priority){
+            return;
+        }
          const randomId = Math.floor(Math.random() *100);
 
          const obj ={
@@ -127,6 +131,9 @@ export default function Home(){
         <div className="main-container"  >
             <div className="firt-div" > 
                     <h1 className="sec-head" > Routine list</h1>
+                    <div className="showcontainer">
+
+                    
                      {
                         Task.map((Taskinfo , index) => {
                             const {id, title,description, priority  } = Taskinfo;
@@ -142,6 +149,7 @@ export default function Home(){
 
                         })
                      }
+                    </div>
 
             </div>
 
