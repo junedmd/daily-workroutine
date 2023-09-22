@@ -1,4 +1,5 @@
 import "./Home.css"
+import imgback from "./../../images/image-back.jpeg"
 import Routine from "../../component/Routine/Routine"
 import { useEffect, useState } from "react"
 export default function Home(){
@@ -9,22 +10,20 @@ export default function Home(){
             description:" jaavscript practise karni hai",
             priority:" very high"
         },
-        {
-            id:2,
-            title: "job",
-            description:" paisa kamana hai mujhe ",
-            priority:" very high"
-        }
+       
         
       
     ]);
-
+    const [id ,setId]=useState(0)
     const [title ,setTitle]=useState('');
     const [description, setdescription ]= useState('');
     const [priority, setpriority ]= useState('');
+    const [isUpdate ,setisUpdate]=useState(false);
+    
 
         useEffect ( ()=>{
             const list = JSON.parse(localStorage.getItem('Routinelist'));
+            if( list && list.length>0 )
                 setTask(list)
         },[]
 
@@ -75,16 +74,59 @@ export default function Home(){
         localStorage.setItem('Routinelist',JSON.stringify(Tasks));
     }
 
+    const updateTaskList = (id)=>{
+      
+        setisUpdate(true);
+        setId(id);
+
+        let currentUpdateTask ;
+
+        Task.forEach((task)=>{
+            if(task.id===id){
+                currentUpdateTask=task;
+            }
+        })
+        
+        setTitle(currentUpdateTask.title);
+        setdescription(currentUpdateTask.description);
+        setpriority(currentUpdateTask.priority);
+    }
    
+    const updateSetValue = ()=>{
+        let indexValue;
+             
+          Task.forEach((task ,i)=>{
+            if(task.id === id){
+                indexValue =i;
+            }
+          }) 
+
+          const tempArray = Task;
+          tempArray[indexValue] = {
+            id:id,
+            title:title,
+            description:description,
+            priority:priority
+
+          }
+
+          setTask([...tempArray]);
+          setId('')
+          setTitle('');
+          setdescription('')
+          setpriority('')
+         
+
+    }
    
     return(
 
         <>
         <h1 className="main-head"> Daily Routine 📃</h1>
 
-        <div className="main-container">
+        <div className="main-container"  >
             <div className="firt-div" > 
-                    <h1 className="sec-head"> Routinelist</h1>
+                    <h1 className="sec-head" > Routine list</h1>
                      {
                         Task.map((Taskinfo , index) => {
                             const {id, title,description, priority  } = Taskinfo;
@@ -92,6 +134,8 @@ export default function Home(){
                             priority={priority}
                             key={index}
                             removeFromTaskList={removeFromTaskList}
+                            updateTaskList={updateTaskList}
+                            updateSetValue={updateSetValue}
                              
                            
                             />
@@ -102,7 +146,11 @@ export default function Home(){
             </div>
 
             <div className="second-div">  
-                <h1  className="sec-head" > Add list</h1>
+                <h1  className="sec-head" > 
+                {  isUpdate? "Update " : "Add " }
+
+            
+                </h1>
                 <div className="form-list">
                   
                      <form>
@@ -135,7 +183,13 @@ export default function Home(){
                         placeholder="priority: "
                         className="priority-input"/><br></br>
 
-                        <button type="button" className="prio-btn" onClick={addtopriority}> add priority</button>
+                           <div> {
+                            isUpdate ?
+                            <button type="button" className="prio-btn" onClick={updateSetValue}> Update </button>
+                            :
+                            <button type="button" className="prio-btn" onClick={addtopriority}> Add </button>}
+                            </div>         
+                       
                      </form>
                 </div>
               

@@ -10,10 +10,14 @@
     flex-wrap: wrap;
     justify-content: space-around;
    background-color: rgb(214, 133, 133);
+   background-image: url(../../images/back3.jpg);
+   background-size:  100% 100%;
+   background-repeat: no-repeat;
    height: 100vh;
 }
 .sec-head{
     color: antiquewhite;
+    padding: 7px;
 }
 .priority-input{
     padding: 13px;

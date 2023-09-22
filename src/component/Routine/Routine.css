@@ -40,3 +40,13 @@ padding: 4px;
     padding: 5px;
     cursor: pointer;
 }
+.routine-edit{
+    position: absolute;
+    right: 60px;
+    bottom: 5px;
+    background-color: aliceblue;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}

@@ -1,5 +1,5 @@
 import "./Routine.css"
-export default function Routine({id,title,description,priority,removeFromTaskList }){
+export default function Routine({id,title,description,priority,removeFromTaskList,updateTaskList }){
     return(
         <>
         <div className="perform-container">
@@ -13,6 +13,16 @@ export default function Routine({id,title,description,priority,removeFromTaskLis
            }}
             
             > 🗑️ </span>
+
+            <span className=" routine-edit "
+
+            onClick={ ()=>{
+                updateTaskList(id);
+            }
+
+            }
+            
+            > ✏️ </span>
         </div>
        
         
