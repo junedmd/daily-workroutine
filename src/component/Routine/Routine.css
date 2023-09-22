@@ -5,10 +5,10 @@
 .perform-container{
     width: 350px;
    
-    background-color:darkcyan;
+    background-color:rgb(52, 143, 150);
     color: antiquewhite;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     padding-bottom: 25px;
     border-radius: 10px;
     border: 1px solid bisque;
@@ -26,9 +26,10 @@
 .routine-priority{
 position: absolute;
 padding: 4px;
+font-size: 18px;
  right: 0;
  top: 0;
- background-color: blueviolet;
+ background-color: rgb(32, 180, 220);
  border-radius:  0 10px 0 10px;
 }
 .routine-delete{
@@ -49,4 +50,26 @@ padding: 4px;
     border-radius: 50%;
     cursor: pointer;
 
+}
+
+@media screen and (max-width:600px) {
+    .perform-container{
+        width: 320px;
+        padding: 10px;
+    }
+    .routine-descri{
+        font-size: 16px;
+    }
+    .routine-priority{
+        font-size: 18px;
+    }
+    .routine-delete{
+        padding: 4px;
+    }
+    .routine-edit{
+        padding: 3px;
+    }
+    .routine-title{
+        font-size: 20px;
+    }
 }

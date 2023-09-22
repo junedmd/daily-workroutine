@@ -1,7 +1,9 @@
-
+*{
+    font-family: cursive;
+}
 .main-head{
     text-align: center;
-    background-color: cadetblue;
+    background-color: rgb(128, 194, 196);
     color: aliceblue;
     padding: 10px;
 }
@@ -16,11 +18,25 @@
    height: 100vh;
 }
 .sec-head{
-    color: antiquewhite;
-    padding: 7px;
+    color: rgb(52, 143, 150);;
+   text-align: center;
+   font-size: 28px;
+   
+    
+    
+}
+.div-center{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+    width: 100px;
+    border-radius: 10px;
 }
 .priority-input{
-    padding: 13px;
+    
+    padding: 10px;
     width: 250px;
     margin: 10px;
     font-size: 20px;
@@ -33,7 +49,7 @@
     margin:  0 auto;
     padding: 7px;
     border-radius: 10px;
-    background-color: cadetblue;
+    background-color: rgb(118, 191, 194);
     color: aliceblue;
     font-size: 20px;
     cursor: pointer;
@@ -41,11 +57,36 @@
 .showcontainer{
 
    
-    height: 500px;
+    height: 480px;
     padding: 15px;
     overflow-y: scroll;
     border-radius: 9px;
 }
 .showcontainer::-webkit-scrollbar{
     width: 2px;
+}
+@media screen and (max-width:600px) {
+    .main-container{
+        height: 100%;
+    }
+    .main-head{
+        padding: 3px;
+        font-size: 28px;
+    }
+    .sec-head{
+        font-size: 21px;
+    }
+    .showcontainer{
+        height: 250px;
+    }
+    .priority-input{
+        padding: 5px;
+    }
+    .prio-btn{
+        padding: 6px;
+        font-size: 18px;
+        width: 100px;
+        margin-top: 2px;
+        margin-bottom: 80px;
+    }
 }

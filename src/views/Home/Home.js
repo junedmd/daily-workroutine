@@ -126,11 +126,12 @@ export default function Home(){
     return(
 
         <>
-        <h1 className="main-head"> Daily Routine 📃</h1>
+         <h1 className="main-head"> Todays Routine... 📃</h1>
 
         <div className="main-container"  >
+       
             <div className="firt-div" > 
-                    <h1 className="sec-head" > Routine list</h1>
+                    <div className="div-center">  <h1 className="sec-head" > List </h1></div>
                     <div className="showcontainer">
 
                     
@@ -154,11 +155,12 @@ export default function Home(){
             </div>
 
             <div className="second-div">  
-                <h1  className="sec-head" > 
-                {  isUpdate? "Update " : "Add " }
+                     <div className="div-center">  <h1  className="sec-head" > 
+                {  isUpdate? "Update " : "New " } </h1></div>
+               
 
             
-                </h1>
+              
                 <div className="form-list">
                   
                      <form>
@@ -195,7 +197,7 @@ export default function Home(){
                             isUpdate ?
                             <button type="button" className="prio-btn" onClick={updateSetValue}> Update </button>
                             :
-                            <button type="button" className="prio-btn" onClick={addtopriority}> Add </button>}
+                            <button type="button" className="prio-btn" onClick={addtopriority}> New </button>}
                             </div>         
                        
                      </form>
